@@ -8,7 +8,7 @@ RUN apt-get install -y libapache2-mod-php php-cli php-mysql php-zip php-ldap php
 RUN service apache2 restart
 RUN cd /var/www/html && wget https://download.prestashop.com/download/releases/prestashop_1.7.4.4.zip
 RUN cd /var/www/html
-RUN unzip prestashop.1.7.4.4.zip
+RUN unzip prestashop_1.7.4.4.zip
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html
 EXPOSE 8080 80
