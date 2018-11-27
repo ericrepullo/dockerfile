@@ -1,0 +1,13 @@
+FROM Ubuntu:18.04
+RUN sudo apt-get update && sudo apt-get upgrade
+RUN sudo apt-get install apache2 && sudo apt-get install unzip && sudo apt-get install php
+RUN a2enmod rewrite
+RUN apt-get install libapache2-mod-php php-cli php-mysql php-zip php-ldap php-curl php-gd php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap php-intl curl
+RUN servie apache2 restart
+RUN cd /var/www/html
+RUN rm index.html
+RUN cd /var/www/html
+RUN unzip prestashop.1.7.4.4.zip
+RUN chown -R www-data:www-data /var/html
+RUN chmod -R 755 /var/www/html
+EXPOSE 8080 80 21 22
