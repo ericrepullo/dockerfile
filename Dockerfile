@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
-RUN sudo apt-get update && sudo apt-get upgrade
-RUN sudo apt-get install -y apache2 && sudo apt-get install -y unzip && sudo apt-get install -y php && sudo apt-get install -y wget
+RUN apt-get update && apt-get upgrade
+RUN apt-get install -y apache2 && apt-get install -y unzip && apt-get install -y php && apt-get install -y wget
 RUN a2enmod rewrite
-RUN sudo apt-get install -y libapache2-mod-php php-cli php-mysql php-zip php-ldap php-curl php-gd php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap php-intl curl
+RUN apt-get install -y libapache2-mod-php php-cli php-mysql php-zip php-ldap php-curl php-gd php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap php-intl curl
 RUN servie apache2 restart
 RUN cd /var/www/html
 RUN rm index.html
