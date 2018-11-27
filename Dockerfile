@@ -1,4 +1,4 @@
-FROM Ubuntu:18.04
+FROM ubuntu:18.04
 RUN sudo apt-get update && sudo apt-get upgrade
 RUN sudo apt-get install -y apache2 && sudo apt-get install -y unzip && sudo apt-get install -y php && sudo apt-get install -y wget
 RUN a2enmod rewrite
